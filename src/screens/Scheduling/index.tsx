@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
 import { BackButton } from '../../components/BackButton';
+import { StatusBar } from 'react-native';
+import { Button } from '../../components/Button';
 import ArrowSvg from '../../assets/arrow.svg';
 
 import {
@@ -14,8 +16,7 @@ import {
   Content,
   Footer,
 } from './styles';
-import { StatusBar } from 'react-native';
-import { Button } from '../../components/Button';
+import { Calendar } from '../../components/Calendar';
 
 export function Scheduling() {
   const theme = useTheme();
@@ -31,7 +32,9 @@ export function Scheduling() {
         <BackButton onPress={() => {}} color={theme.colors.shape} />
 
         <Title>
-          Escolha uma{'\n'} data de início e {'\n'} fim do aluguel
+          Escolha uma{'\n'}
+          data de início e {'\n'}
+          fim do aluguel
         </Title>
 
         <RentalPeriod>
@@ -49,7 +52,9 @@ export function Scheduling() {
         </RentalPeriod>
       </Header>
 
-      <Content></Content>
+      <Content>
+        <Calendar />
+      </Content>
 
       <Footer>
         <Button title="Confirmar" />
